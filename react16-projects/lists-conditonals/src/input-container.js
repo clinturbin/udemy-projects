@@ -14,9 +14,20 @@ class InputContainer extends React.Component {
         this.setState({userInput: event.target.value});
     };
 
+    deleteCharacterHandler = (index) => {
+        let text = this.state.userInput.split('');
+        text.splice(index, 1);
+        let updatedText = text.join('');
+        this.setState({userInput: updatedText});
+    }
+
     render() {
         let charList = this.state.userInput.split('').map((char, index) => {
-            return <Char character={char} key={index}/>
+            return (<Char 
+                character={char} 
+                key={index}
+                clicked={() => this.deleteCharacterHandler(index)}
+            />)
         });
 
         return (
