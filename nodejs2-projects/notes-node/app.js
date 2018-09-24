@@ -1,39 +1,81 @@
 console.log('Starting app.js');
 
+// Third Party - Node Modules
 const fs = require('fs');
-const os = require('os');
 const _ = require('lodash');
+const yargs = require('yargs');
+
+// My Modules
 const notes = require('./notes.js');
 
-// Original Line (produces error)
-// fs.appendFile('greetings.txt', 'Hello World!');
+//--------------------------------------------
+//        Access command line input
+//-------------------------------------------
+// console.log(process.argv); => returns array of three objects
+// ex node app.js list
+// let command = process.argv[2];
+// console.log(`Command: ${command}.`);
 
-// Option 1
-// fs.appendFile('greetings.txt', 'Hello World 2!', (error) => {
-//     if (error) {
-//         console.log('Unable to write File');
-//     }
-// });
-// Option 2
-// fs.appendFileSync('greetings.txt', 'Hello World 3!');
-
-// let user = os.userInfo();
-// console.log(user);  // This prints an object to the screen
-// let message = `Hello ${user.username}! You are ${notes.age}.`;
-// fs.appendFileSync('greetings.txt', message);
+// if (command === 'add') {
+//     console.log('Adding new note');
+// } else if (command === 'list') {
+//     console.log('Listing all notes');
+// } else if (command === 'read') {
+//     console.log('Reading a note');
+// } else if (command === 'remove') {
+//     console.log('Removing Note');
+// } else {
+//     console.log('Command not recognized');
+// }
 
 
-// let result = notes.addNote();
-// console.log(result);
+//-------- Using yargs -----------------------
+// node app.js remove --title="secrets"
+// console.log(process.argv); => returns array of 4 objects
+let argv = yargs.argv;
+let command = argv._[0];
+console.log(`Command: ${command}.`);
+console.log(`Yargs: ${argv}.`);  
+// Should log ['/Users...', 'Users...', ['remove'], title: secrets, $0: app.js]
 
-let sum = notes.add(5, 10);
-console.log(sum);
+if (command === 'add') {
+    let note = notes.addNote(argv.title, argv.body);
+    if (note) {
+        console.log(`Note created`);
+        notes.logNote(note);
+    } else {
+        console.log('Note title taken');
+    }
+} else if (command === 'list') {
+    notes.getAll();
+} else if (command === 'read') {
+    let note = notes.getNote(argv.title);
+    if (note) {
+        console.log(`Note Found`);
+        notes.logNote(note);
+    }
+} else if (command === 'remove') {
+    let noteRemoved = notes.removeNote(argv.title);
+    let message = noteRemoved ? 'Note was removed' : 'Note not found';
+    console.log(message); 
+} else {
+    console.log('Command not recognized');
+}
 
-// -- Lodash --
-// console.log(_.isString(true)); //=> false
-// console.log(_.isString('hello')); //=> true
+// node app.js add --title="secret" --body="This is my secret"
+// logs Adding Note secret This is my secret
 
-// return array with no duplicates
-let filteredArray = _.uniq([1,1,1,2,2,'C-Bot', 'C-Bot']);
-console.log(filteredArray);
+// node app.js list
+// logs Getting all notes
+
+// node app.js read --title="secret"
+// logs Getting Note: secret
+
+// node app.js remove --title="secret"
+// logs Removing Note: secret
+
+
+//-----------------------------------------
+//      WORKING WITH JSON
+//----------------------------------------
 
