@@ -8,35 +8,35 @@ const yargs = require('yargs');
 // My Modules
 const notes = require('./notes.js');
 
-//--------------------------------------------
-//        Access command line input
-//-------------------------------------------
-// console.log(process.argv); => returns array of three objects
-// ex node app.js list
-// let command = process.argv[2];
-// console.log(`Command: ${command}.`);
+let titleOptions = {
+    describe: 'Title of note',
+    demand: true,
+    alias: 't'
+};
 
-// if (command === 'add') {
-//     console.log('Adding new note');
-// } else if (command === 'list') {
-//     console.log('Listing all notes');
-// } else if (command === 'read') {
-//     console.log('Reading a note');
-// } else if (command === 'remove') {
-//     console.log('Removing Note');
-// } else {
-//     console.log('Command not recognized');
-// }
+let bodyOptions = {
+    describe: 'Body of note',
+    demand: true,
+    alias: 'b'
+};
 
-
-//-------- Using yargs -----------------------
-// node app.js remove --title="secrets"
-// console.log(process.argv); => returns array of 4 objects
-let argv = yargs.argv;
+let argv = yargs
+    .command('add', 'Add a new Note', {
+        title: titleOptions ,
+        body: bodyOptions
+    })
+    .command('list', 'List all notes')
+    .command('read', 'Read a note', {
+        title: titleOptions
+    })
+    .command('remove', 'Remove a note', {
+        title: titleOptions
+    })
+    .help()
+    .argv;
 let command = argv._[0];
 console.log(`Command: ${command}.`);
-console.log(`Yargs: ${argv}.`);  
-// Should log ['/Users...', 'Users...', ['remove'], title: secrets, $0: app.js]
+console.log(`Yargs: ${argv}.`);
 
 if (command === 'add') {
     let note = notes.addNote(argv.title, argv.body);
@@ -47,7 +47,9 @@ if (command === 'add') {
         console.log('Note title taken');
     }
 } else if (command === 'list') {
-    notes.getAll();
+    let allNotes = notes.getAll();
+    console.log(`Printing ${allNotes.length} note(s)`);
+    allNotes.forEach(note => notes.logNote(note));
 } else if (command === 'read') {
     let note = notes.getNote(argv.title);
     if (note) {
@@ -61,21 +63,3 @@ if (command === 'add') {
 } else {
     console.log('Command not recognized');
 }
-
-// node app.js add --title="secret" --body="This is my secret"
-// logs Adding Note secret This is my secret
-
-// node app.js list
-// logs Getting all notes
-
-// node app.js read --title="secret"
-// logs Getting Note: secret
-
-// node app.js remove --title="secret"
-// logs Removing Note: secret
-
-
-//-----------------------------------------
-//      WORKING WITH JSON
-//----------------------------------------
-

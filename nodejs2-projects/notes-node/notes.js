@@ -30,9 +30,7 @@ let addNote = (title, body) => {
     }
 };
 
-let getAll = () => {
-    console.log('Getting all notes');
-};
+let getAll = () => fetchNotes();
 
 let getNote = (title) => {
     let notes = fetchNotes();
@@ -41,16 +39,18 @@ let getNote = (title) => {
 };
 
 let removeNote = (title) => {
-    // fetch notes
     let notes = fetchNotes();
-    //filter notes, removing the one with ttitle of argumnet
     let newNotes = notes.filter(note => note.title !== title)
-    // save new notes array
     saveNotes(newNotes);
     return notes.length !== newNotes.length;
 };
 
 let logNote = (note) => {
+    // debugger;
+    // Break on this line and use repl to output the note
+    // node inspect app.js read --title="to buy"
+    // this opens node in debugger mode
+    // use repl
     console.log('-------------');
     console.log(`Title: ${note.title}`);
     console.log(`Body: ${note.body}`);
