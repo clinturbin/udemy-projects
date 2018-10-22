@@ -14,5 +14,7 @@ Instructor: Andrew Mead
 Instructor: Maximilian Schwarzmüller  
 
 ### PROJECTS  
+- 0) Lecture Notes  
+    - This is a code along to go with the video lectures
 - 1) Base Syntax
 - 2) Lists Conditionals
