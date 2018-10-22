@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import Radium from 'radium';
+// npm install --save radium
+// radium is a popular package for react that allows us to use inline styles with pseudo selectors and media queries
 import './App.css';
 import Person from './Person/Person';
 
@@ -14,15 +17,10 @@ class App extends Component {
 
   nameChangedHandler = (event, id) => {
     let personIndex = this.state.persons.findIndex(person => person.id === id);
-
-    // let person = Object.assign({}, this.state.persons[personIndex]);  
     let person = {...this.state.persons[personIndex]};
-
     person.name = event.target.value;
-
     let persons = [...this.state.persons];
     persons[personIndex] = person;
-
     this.setState({ persons: persons })
   };
 
@@ -32,7 +30,6 @@ class App extends Component {
   };
 
   deletePersonHandler = (personIndex) => {
-    // let persons = this.state.persons.slice();
     let persons = [...this.state.persons];
     persons.splice(personIndex, 1);
     this.setState({persons: persons});
@@ -40,11 +37,16 @@ class App extends Component {
 
   render() {
     const style = {
-      backgroundColor: 'white',
+      backgroundColor: 'green',
+      color: 'white',
       font: 'inherit',
       border: '1px solid blue',
       padding: '8px',
-      cursor: 'pointer'
+      cursor: 'pointer',
+      ':hover': {
+        backgroundColor: 'lightgreen',
+        color: 'black'
+      } 
     };
 
     let persons = null;
@@ -63,12 +65,25 @@ class App extends Component {
           )}
         </div>
       );
+      style.backgroundColor = 'red';
+      style[':hover'] = {
+        backgroundColor: 'salmon',
+        color: 'black'
+      };
     };
+
+    let classes = [];
+    if (this.state.persons.length <= 2) {
+      classes.push('red'); // classes = ['red']
+    }
+    if (this.state.persons.length <=1) {
+      classes.push('bold');  // classes = ['red', 'bold']
+    }
 
     return (
       <div className='App'>
         <h1>Hi, I'm a React app</h1>
-        <p>This is really working</p>
+        <p className={classes.join(' ')}>This is really working</p>
         <button 
           style={style}
           onClick={this.toggelPersonsHandler}>Switch Name</button>
@@ -78,4 +93,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Radium(App);
