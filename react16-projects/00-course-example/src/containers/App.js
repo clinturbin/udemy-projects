@@ -4,14 +4,25 @@ import Persons from '../components/Persons/Persons';
 import Cockpit from '../components/Cockpit/Cockpit';
 
 class App extends Component {
-  state = {
-    persons: [
-      {id: 'fasf4', name: 'Max', age: '28'},
-      {id: 'hfghf4', name: 'Michael', age: '29'},
-      {id: 'fghft5', name: 'Isobel', age: '30'},
-    ],
-    showPersons: false
+  constructor(props) {
+    super(props);
+    console.log('[App.js] inside constructor', props);
+    this.state = {
+      persons: [
+        {id: 'fasf4', name: 'Max', age: '28'},
+        {id: 'hfghf4', name: 'Michael', age: '29'},
+        {id: 'fghft5', name: 'Isobel', age: '30'},
+      ],
+      showPersons: false
+    }
+  }
 
+  componentWillMount() {
+    console.log(`[App.js] inside componentWillMount`);
+  }
+
+  componentDidMount() {
+    console.log('[App.js] inside componentDidMount()');
   }
 
   nameChangedHandler = (event, id) => {
@@ -35,7 +46,7 @@ class App extends Component {
   };
 
   render() {
-
+    console.log('[App.js] inside render()')
     let persons = null;
 
     if (this.state.showPersons) {
@@ -50,6 +61,7 @@ class App extends Component {
     return (
       <div className='App'>
         <Cockpit 
+          appTitle={this.props.title}
           showPersons={this.state.showPersons}
           persons={this.state.persons}
           clicked={this.toggelPersonsHandler}
