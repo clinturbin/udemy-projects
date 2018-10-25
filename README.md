@@ -18,3 +18,6 @@ Instructor: Maximilian Schwarzmüller
     - This is a code along to go with the video lectures
 - 1) Base Syntax
 - 2) Lists Conditionals
+- 3) Burger Builder  
+    - The Burger Builder is the main course project  
+        - Section: 8 - A Real App: The Burger Builder (Basic Version)
