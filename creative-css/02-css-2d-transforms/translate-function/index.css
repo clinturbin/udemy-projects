@@ -1,0 +1,88 @@
+img {
+    width: 300px;
+    display: block;
+    margin: auto;
+    margin-top: 200px;
+    transition: transform 2s;
+    /* add transform origin */
+    /* rotate from top center */
+    transform-origin: top;
+}
+
+img:hover {
+    /* ------ Use Translate to move an image across the X or Y axis */
+    /* moves right */
+    /* transform: translateX(500px); */
+    
+    /* moves left */
+    /* transform: translateX(-500px); */
+    
+    /* moves up */
+    /* transform: translateY(-200px); */
+    
+    /* moves down */
+    /* transform: translateY(200px); */
+
+    /* moves up right */
+    /* transform: translate(500px, -200px); */
+
+    /* moves up left */
+    /* transform: translate(-500px, -200px); */
+
+        /* moves down right */
+    /* transform: translate(500px, 200px); */
+
+    /* moves down left */
+    /* transform: translate(-500px, 200px); */
+
+    /* --------Use scale() to change image size ----------- */
+    /* image width 1.5 times greater */
+    /* transform: scaleX(1.5); */
+
+    /* decrease width of image by half */
+    /* transform: scaleX(.5); */
+    
+    /* decrease heigth of image by half */
+    /* transform: scaleY(.5); */
+
+    /* image height 1.5 times greater */
+    /* transform: scaleY(1.5); */
+
+    /* image width times 2, image height times 1.5 */
+    /* transform: scale(2, 1.5); */
+
+    /* scale width and height together */
+    /* transform: scale(2); */
+
+    /* scale image down 25% */
+    /* transform: scale(.25); */
+
+    /* ----------- Rotate function ------------------------- */
+    /* rotate clockwise 20 degrees */
+    /* transform: rotate(20deg); */
+
+    /* rotate counter clockwise 60 degress */
+    /* transform: rotate(-60deg); */
+
+    /* rotate image 1 complete turn clockwise (equals 360 degrees) */
+    /* transform: rotate(1turn); */
+
+    /* rotate 200grad is the same as 180 degrees clockwise */
+    /* transform: rotate(200grad); */
+
+    /* --------- Skew Function --------------------------- */
+    /* skew image 30 degrees in x direction */
+    /* transform: skewX(30deg); */
+    /* transform: skewX(-30deg); */
+
+    /* skew image 30 degrees in y direction */
+    /* transform: skewY(30deg); */
+    /* transform: skewY(-30deg); */
+
+    /* skew image 20 degrees horizontally and 40 degrees vertically */
+    /* transform: skew(20deg, 40deg); */
+
+    /* ----------- Transform Origin ----------------------- */
+    transform: rotate(45deg);
+
+}
