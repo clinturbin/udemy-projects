@@ -1,0 +1,58 @@
+/* -------   Translate in 3D ----------------- */
+
+/* img {
+    width: 300px;
+    display: block;
+    margin: auto;
+    margin-top: 200px;
+    transition: transform 1s;
+} */
+
+/* This will make the image appear as if it is getting larger, but it is actually moving toward you */
+/* body {
+    perspective: 1000px;
+}
+
+img:hover {
+    transform: translateZ(300px);   
+} */
+
+/* This will cause the image to move toward you then disappear because it technically moves behind you */
+/* body {
+    perspective: 500px;
+}
+img:hover {
+    transform: translateZ(800px);
+} */
+
+
+/* -----------  Rotate in 3D ------------- */
+
+body {
+    perspective: 500px;
+}
+
+img {
+    width: 300px;
+    display: block;
+    margin: auto;
+    margin-top: 200px;
+    transition: transform 1s;
+}
+
+/* img:hover {
+    transform: rotateZ(120deg);
+} */
+
+/* img:hover {
+    transform: rotateX(60deg);
+} */
+/* rotating 90degs will cause the image to disappear (image rotates until we can only see its edge) */
+/* img:hover {
+    transform: rotateX(90deg);
+} */
+
+
+img:hover {
+    transform: rotateY(60deg);
+}

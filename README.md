@@ -49,3 +49,8 @@ Instructor: Ahmed Sadek
         - skewY(30deg) - skews image 30 degrees in the y direction
         - skew(xdeg, ydeg) - skews image in x and y direction
     - transform-origin: defaults to center of image
+- Section 3: CSS 3D Transforms  
+  - Every time you want to work with a 3-D environment, you need to define the perspective first. the perspective CSS property is added to the image container.
+  - rotateZ(degs) is actually similar to rotate
+  - rotateX(degs): rotate over x axis (rotateX(90deg) will make the image disappear when it is done rotating)
+  - rotateY(degs): rotate over y-axis
