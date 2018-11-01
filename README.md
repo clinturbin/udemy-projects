@@ -54,3 +54,6 @@ Instructor: Ahmed Sadek
   - rotateZ(degs) is actually similar to rotate
   - rotateX(degs): rotate over x axis (rotateX(90deg) will make the image disappear when it is done rotating)
   - rotateY(degs): rotate over y-axis
+- Section 4: CSS Transforms Creative Examples  
+    - Creative Button Hover Effect (1 - 8)  
+    - 
