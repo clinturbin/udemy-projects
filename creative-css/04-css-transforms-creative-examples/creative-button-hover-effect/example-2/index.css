@@ -27,13 +27,13 @@ a:before {
     background-color: #351435;
     z-index: -1;
     /* swipes from the left */
-    /* transform: translateX(-100%); */
+    transform: translateX(-100%);
     /* swipes from the right */
     /* transform: translateX(100%); */
     /* swipe from top to top */
     /* transform: translateY(-100%); */
     /* swipe from top to bottom */
-    transform: translateY(100%);
+    /* transform: translateY(100%); */
     transition: all 1s;
 }
 
