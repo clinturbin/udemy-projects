@@ -56,4 +56,7 @@ Instructor: Ahmed Sadek
   - rotateY(degs): rotate over y-axis
 - Section 4: CSS Transforms Creative Examples  
     - Creative Button Hover Effect (1 - 8)  
-    - 
+    - Image Hover Effect with CSS Transforms (1 - 4)  
+    - Smoky Text Effect Using CSS Transforms  
+    - Image Zoom In Effect Using CSS Transforms  
+    - Menu Hover Effect with CSS Transforms 
