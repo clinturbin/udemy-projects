@@ -71,3 +71,16 @@ Instructor: Ahmed Sadek
         - Tells how many times an animation should be repeated
     - Animation Direction Property  
     - Animation Shorthand Porperty
+- Section 6: CSS Animation Creative Examples  
+    - Floating Text Using CSS Animation  
+    - Loading Effect Using CSS Animation  
+    - Driving a Car and Motor Bike
+    - Text Rotator Using CSS Animation  
+    - Animated Image Pattern  
+    - Button Shaking Hover Effect  
+    - Animated Button  
+    - Lighting Text  
+    - Heartbeat  
+    - Animated Text Background  
+    - Bouncing Balls  
+    - Rain Effect
