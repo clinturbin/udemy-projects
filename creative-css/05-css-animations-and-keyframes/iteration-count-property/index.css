@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+}
+
+div {
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    animation-name: moving;
+    animation-duration: 5s;
+    animation-fill-mode: both;
+    /* animation-iteration-count: 3; */
+    /* make animation repeat infinite amount of times */
+    /* animation-iteration-count: infinite; */
+
+    animation-iteration-count: 1;
+    /* animation-timing-function: ease; */
+    /* animation-timing-function: ease-in; */
+    /* animation-timing-function: ease-out; */
+    /* animation-timing-function: ease-in-out; */
+    animation-timing-function: linear;
+}
+
+@keyframes moving {
+    0% { 
+        transform: translateX(500px); 
+    }
+    50% { 
+        transform: translateX(1000px); 
+    }
+    
+    100% { 
+        transform: translate(1000px, 500px); 
+    }
+}

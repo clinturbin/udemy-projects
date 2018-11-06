@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+}
+
+div {
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    animation-name: moving;
+    animation-duration: 5s;
+    /* make animated element stay at its final position */
+    /* forwards tells the browser to take the last stage of the animation 
+       and apply it to the element at the end of the animation */
+    /* animation-fill-mode: forwards; */
+    /* using backwards will start the element at 500px (the 0% mark) not from its original position 
+       using backwards will then push the element back to its original position after animation is complete*/
+    /* animation-fill-mode: backwards; */
+    /* animation-fill-mode: both uses both forwards and backwards */
+    animation-fill-mode: both;
+    /* make animation wait before starting */
+    animation-delay: 3s;
+}
+
+@keyframes moving {
+    0% { 
+        transform: translateX(500px); 
+    }
+    50% { 
+        transform: translateX(1000px); 
+    }
+    
+    100% { 
+        transform: translate(1000px, 500px); 
+    }
+}

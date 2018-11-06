@@ -59,4 +59,15 @@ Instructor: Ahmed Sadek
     - Image Hover Effect with CSS Transforms (1 - 4)  
     - Smoky Text Effect Using CSS Transforms  
     - Image Zoom In Effect Using CSS Transforms  
-    - Menu Hover Effect with CSS Transforms 
+    - Menu Hover Effect with CSS Transforms
+- Section 5: CSS Animations and Keyframes  
+    1) Define a CSS Animation Rule (keyframes)  
+    2) Add it to the HTML element you want to animate
+    - Animation Introduction  
+    - Create CSS Animations with more Stages  
+    - Animation Fill Mode Property  
+        - Just tells where the element should start and end up
+    - Animation Iteration Count Property  
+        - Tells how many times an animation should be repeated
+    - Animation Direction Property  
+    - Animation Shorthand Porperty
