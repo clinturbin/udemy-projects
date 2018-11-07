@@ -20,9 +20,11 @@ Instructor: Maximilian Schwarzmüller
 - 2) Lists Conditionals
 - 3) Burger Builder  
     - The Burger Builder is the main course project  
-        - Section: 8 - A Real App: The Burger Builder (Basic Version)
+        - Section 8: A Real App: The Burger Builder (Basic Version)
             - Additional npm libraries: 
-                - npm install --save prop-types (Validates prop types of React properties)
+                - npm install --save prop-types (Validates prop types of React properties)  
+- 4)  Reaching Out to the Web  
+     - npm install axios --save
 
 
 ## Creative CSS Animations, Transitions And Transforms Course  
