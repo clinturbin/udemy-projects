@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
+import axios from '../../axios';
 
 import './FullPost.css';
 
@@ -12,7 +13,7 @@ class FullPost extends Component {
     componentDidUpdate() {
         if (this.props.id) {
             if ( !this.state.loadedPost || (this.state.loadedPost && this.state.loadedPost.id !== this.props.id) ) {
-                axios.get(`https://jsonplaceholder.typicode.com/posts/${this.props.id}`)
+                axios.get(`/posts/${this.props.id}`)
                 .then(response => {
                     this.setState({loadedPost: response.data});
                 });
@@ -23,7 +24,7 @@ class FullPost extends Component {
 
     // delete request will not actually delete anything, it will just just simulate deleting a post for now
     deletePostHandler = () => {
-        axios.delete(`https://jsonplaceholder.typicode.com/posts/${this.props.id}`)
+        axios.delete(`/posts/${this.props.id}`)
         .then(response => {
             console.log(response);
         });
