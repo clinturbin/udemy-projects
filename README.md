@@ -23,6 +23,9 @@ Instructor: Maximilian Schwarzmüller
         - Section 8: A Real App: The Burger Builder (Basic Version)
             - Additional npm libraries: 
                 - npm install --save prop-types (Validates prop types of React properties)  
+        - Section 10: Burger Bulder Project - Accessing A Server  
+            - Additional npm libraries: 
+                - npm install --save axios (axios is used to send http requests)  
 - 4)  Reaching Out to the Web  
      - npm install axios --save
 
