@@ -26,6 +26,7 @@ Instructor: Maximilian Schwarzmüller
         - Section 10: Burger Bulder Project - Accessing A Server  
             - Additional npm libraries: 
                 - npm install --save axios (axios is used to send http requests)  
+            - CSS Spinners (https://projects.lukehaas.me/css-loaders/)  
 - 4)  Reaching Out to the Web  
      - npm install axios --save
 
