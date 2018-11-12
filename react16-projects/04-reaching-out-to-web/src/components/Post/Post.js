@@ -1,5 +1,5 @@
 import React from 'react';
-
+// import { withRouter } from 'react-router-dom';
 import './Post.css';
 
 const post = (props) => (
@@ -12,3 +12,5 @@ const post = (props) => (
 );
 
 export default post;
+// getting acces to routing related props like history
+// export default withRouter(post);
