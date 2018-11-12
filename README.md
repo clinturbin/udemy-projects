@@ -27,8 +27,11 @@ Instructor: Maximilian Schwarzmüller
             - Additional npm libraries: 
                 - npm install --save axios (axios is used to send http requests)  
             - CSS Spinners (https://projects.lukehaas.me/css-loaders/)  
-- 4)  Reaching Out to the Web  
-     - npm install axios --save
+- 4)  Reaching Out to the Web (Blog App)  
+    - Section 9: 
+        - npm install axios --save  
+    - Section 11: Multi Page Feeling in a Single Page App (Routing)  
+        - npm install --save react-router react-router-dom
 
 
 ## Creative CSS Animations, Transitions And Transforms Course  
