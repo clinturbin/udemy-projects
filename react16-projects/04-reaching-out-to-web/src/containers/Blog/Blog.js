@@ -4,6 +4,7 @@ import { Route, NavLink } from 'react-router-dom';
 import './Blog.css';
 import Posts from './Posts/Posts';
 import NewPost from './NewPost/NewPost';
+import FullPost from './FullPost/FullPost';
 
 class Blog extends Component {
     render () {
@@ -22,18 +23,16 @@ class Blog extends Component {
                                 }}
                             >Home</NavLink></li>
                             <li><NavLink to={{
-                                pathname: '/new-post', // relative path
-                                // pathname: this.props.match.url + '/new-post', // relative path
-                                hash: '#submit', // just an example, doesn't do anything right now
-                                search: '?quick-submit=true'  // just an example, doesn't do anything right now
+                                pathname: '/new-post',
+                                hash: '#submit',
+                                search: '?quick-submit=true'
                             }}>New Post</NavLink></li>
                         </ul>
                     </nav>
                 </header>
-                {/* <Route path='/' exact render={() => <h1>Home Page</h1>} />
-                <Route path='/' render={() => <h1>Home Page 2</h1>} /> */}
                 <Route path='/' exact component={Posts} />
                 <Route path='/new-post' component={NewPost} />
+                <Route path='/:id' exact component={FullPost} />
             </div>
         );
     }

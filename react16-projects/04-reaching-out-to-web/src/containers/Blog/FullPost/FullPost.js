@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-// import axios from 'axios';
-import axios from '../../axios';
+import axios from '../../../axios';
 
 import './FullPost.css';
 
@@ -9,11 +8,11 @@ class FullPost extends Component {
         loadedPost: null
     }
 
-    // Fetching Data on Update (without creating an infinite loop)
-    componentDidUpdate() {
-        if (this.props.id) {
+    componentDidMount() {
+        console.log(this.props)
+        if (this.props.match.params.id) {
             if ( !this.state.loadedPost || (this.state.loadedPost && this.state.loadedPost.id !== this.props.id) ) {
-                axios.get(`/posts/${this.props.id}`)
+                axios.get(`/posts/${this.props.match.params.id}`)
                 .then(response => {
                     this.setState({loadedPost: response.data});
                 });
