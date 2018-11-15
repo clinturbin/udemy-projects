@@ -29,6 +29,8 @@ Instructor: Maximilian Schwarzmüller
             - Additional npm libraries: 
                 - npm install --save axios (axios is used to send http requests)  
             - CSS Spinners (https://projects.lukehaas.me/css-loaders/)  
+        - Section 12: Adding Routing to Our Burger Project  
+            - npm install --save react-router-dom
 - Blog Example (Reching Out to the Web)  
     - Section 9: 
         - npm install axios --save  
