@@ -3,18 +3,6 @@ import React from 'react';
 import classes from './Order.module.css';
 
 const order = (props) => {
-    // Turn ingredients into an array of ingredients
-    // let transformedIngredients = Object.keys( props.ingredients )
-    //     .map( igKey => {
-    //         return [...Array( props.ingredients[igKey] )].map( ( _, i ) => {
-    //             return <BurgerIngredient key={igKey + i} type={igKey} />;
-    //         } );
-    //     } )
-    //     .reduce((arr, el) => {
-    //         return arr.concat(el)
-    //     }, []);
-
-    //  Alternative
     const ingredients = [];
     for (let ingredientName in props.ingredients) {
         ingredients.push({
