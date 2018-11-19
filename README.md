@@ -38,7 +38,8 @@ Instructor: Maximilian Schwarzmüller
         - npm install --save react-router react-router-dom
 - Redux Example  
     - Section 14:
-        - npm install --save redux 
+        - npm install --save redux
+        - npm install --save react-redux (allows you to connect Redux store to React app) 
 
 
 ## Creative CSS Animations, Transitions And Transforms Course  
