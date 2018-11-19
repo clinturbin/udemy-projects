@@ -36,6 +36,9 @@ Instructor: Maximilian Schwarzmüller
         - npm install axios --save  
     - Section 11: Multi Page Feeling in a Single Page App (Routing)  
         - npm install --save react-router react-router-dom
+- Redux Example  
+    - Section 14:
+        - npm install --save redux 
 
 
 ## Creative CSS Animations, Transitions And Transforms Course  
