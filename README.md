@@ -20,6 +20,9 @@ Instructor: Maximilian Schwarzmüller
     - 1) Base Syntax
     - 2) Lists Conditionals  
     - 3) Routing
+    - 4) Time to Practice - Dispatching Actions (this assignment was not for a separate project like the other ones)
+    - 5) Redux Basics  
+        - npm install --save redux react-redux
 - Burger Builder  
     - The Burger Builder is the main course project  
         - Section 8: A Real App: The Burger Builder (Basic Version)
