@@ -1,4 +1,4 @@
-import * as actionTypes from '../actions';
+import * as actionTypes from '../actions/actions';
 
 const initialState = {
     results: []
@@ -15,7 +15,7 @@ const reducer = (state = initialState, action) => {
                 })
             };
         case actionTypes.DELETE_RESULT:
-            const updatedArray = state.results.filter(result => result.id !== action.resultElementId )
+            const updatedArray = state.results.filter(result => result.id !== action.resultElId )
             return {
                 ...state,
                 results: updatedArray
