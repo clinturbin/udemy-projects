@@ -44,6 +44,8 @@ Instructor: Maximilian Schwarzmüller
     - Section 14:
         - npm install --save redux
         - npm install --save react-redux (allows you to connect Redux store to React app) 
+    - Section 16: Redux Advanced
+        - npm install --save redux-thunk
 
 
 ## Creative CSS Animations, Transitions And Transforms Course  
