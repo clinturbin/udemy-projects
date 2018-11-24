@@ -35,6 +35,7 @@ Instructor: Maximilian Schwarzmüller
         - Section 12: Adding Routing to Our Burger Project  
             - npm install --save react-router-dom
         - Section 15: Adding Redux to Our Project
+        - Section 17: Redux Advanced: Burger Project
 - Blog Example (Reching Out to the Web)  
     - Section 9: 
         - npm install axios --save  
