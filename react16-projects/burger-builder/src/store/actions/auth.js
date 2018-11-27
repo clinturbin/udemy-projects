@@ -7,10 +7,11 @@ export const authStart = () => {
     };
 };
 
-export const authSuccess = (authData) => {
+export const authSuccess = (token, userId) => {
     return {
         type: actionTypes.AUTH_SUCCESS,
-        authData: authData
+        idToken: token,
+        userId: userId
     };
 };
 
@@ -21,7 +22,7 @@ export const authFail = (error) => {
     };
 };
 
-export const auth = (email, password) => {
+export const auth = (email, password, isSignup) => {
     return dispatch => {
         dispatch(authStart());
         const authData = {
@@ -29,10 +30,14 @@ export const auth = (email, password) => {
             password: password,
             returnSecureToken: true
         }
-        axios.post(`https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=${process.env.REACT_APP_FIREBASE_AUTH_API}`, authData)
+        let url = `https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=${process.env.REACT_APP_FIREBASE_AUTH_API}`;
+        if (!isSignup) {
+            url = `https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=${process.env.REACT_APP_FIREBASE_AUTH_API}`
+        }
+        axios.post(url, authData)
         .then(response => {
             console.log(response);
-            dispatch(authSuccess(response.data));
+            dispatch(authSuccess(response.data.idToken, response.data.localId));
         })
         .catch(error => {
             console.log(error);
