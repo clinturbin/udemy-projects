@@ -67,7 +67,6 @@ export const fetchOrders = (token, userId) => {
         const queryParams = `?auth=${token}&orderBy="userId"&equalTo="${userId}"`
         axios.get('/orders.json' + queryParams)
         .then(response => {
-            console.log(response.data);
             const fetchedOrders = [];
             for (let key in response.data) {
                 fetchedOrders.push({
