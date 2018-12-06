@@ -36,6 +36,10 @@ Instructor: Maximilian Schwarzmüller
             - npm install --save react-router-dom
         - Section 15: Adding Redux to Our Project
         - Section 17: Redux Advanced: Burger Project
+        - Section 18: Adding Authentication to Our Burger Project  
+        - Section 19: Improving Our Burger Project  
+        - Section 20: Testing  
+            - npm install --save enzyme react-test-renderer enzyme-adapter-react-16
 - Blog Example (Reching Out to the Web)  
     - Section 9: 
         - npm install axios --save  
