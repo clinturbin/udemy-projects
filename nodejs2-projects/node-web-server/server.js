@@ -1,19 +1,26 @@
 const express = require('express');
+const hbs = require('hbs');
 
 let app = express();
 
+let currentYear = new Date().getFullYear();
+
+app.set('view engine', 'hbs');
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', (req, res) => {
-    // res.send('Hello Express!');
-    res.send({
-        name: 'C-Bot',
-        likes: ['pizza', 'Final Fantasy', 'psych', 'New Model Army']
+    res.render('home.hbs', {
+        pageTitle: 'Home',
+        welcomeMessage: 'Welcome to the Home Page',
+        currentYear: currentYear
     });
 });
 
 app.get('/about', (req, res) => {
-    res.send('About Page');
+    res.render('about.hbs', {
+        pageTitle: 'About Page',
+        currentYear: currentYear
+    });
 });
 
 app.get('/bad', (req, res) => {
