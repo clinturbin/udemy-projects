@@ -24,3 +24,8 @@
 // Inside package.json we can make a new script for this
 // "test-watch": "nodemon --exec \"npm test\"""
 // Then in terminal ->  npm run test-watch
+
+
+// Using and Assertion Library
+
+// npm install expect@1.20.2 --save-dev
