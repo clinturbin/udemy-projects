@@ -36,6 +36,16 @@
         }
     }
 
+    &--green {
+        background-color: $color-primary;
+        color: $color-white;
+        padding: 1.5rem 4rem;
+
+        &::after {
+            background-color: $color-primary;
+        }
+    }
+
     &::after {
         content: '';
         display: inline-block;
