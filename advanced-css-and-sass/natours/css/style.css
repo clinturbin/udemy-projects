@@ -1,3 +1,17 @@
+/*
+    0px - 600px:     Phone
+    600px - 900px:   Tablet Portrait Mode
+    900px - 1200px:  Tablet Landscape Mode
+    1200px - 1800px: Desktop (where our normal styles apply - this is desktop first)
+    1800px + :       Big Desktop  
+*/
+/*
+    $breakpoint argument choices
+    - phone
+    - tab-port
+    - tab-land
+    - big-desktop
+*/
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -35,6 +49,15 @@
 
 html {
   font-size: 62.5%; }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
 
 body {
   box-sizing: border-box; }
@@ -445,8 +468,8 @@ body {
     display: table;
     overflow: hidden;
     opacity: 0;
-    transform: translate(-50%, -50%) scale(0.5);
-    transition: all .4s; }
+    transform: translate(-50%, -50%) scale(0.25);
+    transition: all .5s .2s; }
   .popup__left {
     width: 33.333333%;
     display: table-cell; }
