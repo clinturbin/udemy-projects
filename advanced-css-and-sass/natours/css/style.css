@@ -558,14 +558,33 @@ body {
   .popup__left {
     width: 33.333333%;
     display: table-cell; }
+    @media (max-width: 75em) {
+      .popup__left {
+        width: 100%;
+        height: 33.33333%;
+        display: block; } }
   .popup__right {
     width: 66.666667%;
     display: table-cell;
     vertical-align: middle;
     padding: 3rem 5rem; }
+    @media (max-width: 75em) {
+      .popup__right {
+        width: 100%;
+        height: 66.66666%;
+        display: block; } }
+    @media (max-width: 37.5em) {
+      .popup__right {
+        text-align: center;
+        padding: 1.5rem 3rem; } }
   .popup__img {
     display: block;
     width: 100%; }
+    @media (max-width: 75em) {
+      .popup__img {
+        width: 49%;
+        height: 100%;
+        display: inline-block; } }
   .popup__text {
     font-size: 1.4rem;
     margin-bottom: 4rem;
@@ -579,6 +598,9 @@ body {
     -ms-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto; }
+    @media (max-width: 37.5em) {
+      .popup__text {
+        column-count: 1; } }
   .popup:target {
     opacity: 1;
     visibility: visible; }
@@ -595,6 +617,10 @@ body {
     display: inline-block;
     transition: all .2s;
     line-height: 1; }
+    @media (max-width: 75em) {
+      .popup__close:link, .popup__close:visited {
+        top: 1.5rem;
+        right: 1.5rem; } }
   .popup__close:hover {
     color: #55c57a; }
 
