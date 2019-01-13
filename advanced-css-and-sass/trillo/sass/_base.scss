@@ -18,9 +18,11 @@
     --line: 1px solid var(--color-grey-light-1);
 }
 
-$bp-largest: 75rem;  // 1200px / 16 = 75
-$bp-large: 68.75rem; // 1100px
-$bp-medium: 56.25rem; // 900px
+$bp-largest: 75em;   // 1200px / 16 = 75
+$bp-large: 68.75em;  // 1100px
+$bp-medium: 56.25em; // 900px
+$bp-small: 37.5em;   // 600px
+$bp-smallest: 31.25em;  // 500px
 
 * {
     margin: 0;
