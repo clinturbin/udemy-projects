@@ -1,14 +1,31 @@
 .container {
     background-color: #eee;
     width: 1000px;
+    height: 1000px;
     margin: 30px auto;
 
     display: grid;
-    grid-template-rows: 150px 150px; /* Sets 1st row to 150px and 2nd row to 150px*/
-    grid-template-columns: 150px 150px 150px; /* Sets 1st, 2nd and 3rd column to 150px*/
+    /* ------ Sets 1st row to 150px and 2nd row to 150px ------ */
+    /* grid-template-rows: repeat(2, 150px); */
+    /* ------ Sets and 2nd row to same remaining space ------ */
+    grid-template-rows: repeat(2, 1fr);
+    /* ------ Sets 1st, 2nd and 3rd column to 150px ------ */
+    /* grid-template-columns: repeat(3, 150px); */
+    /* ------ first 2 cols are 150px 3rd col is 300px ------ */
+    /* grid-template-columns: repeat(2, 150px) 300px;*/
+    /* ------ 1st and 2nd col are 150px, 3rd col takes up remainder of container ------ */
+    /* grid-template-columns: repeat(2, 150px) 1fr; */
+    /* ------ Set each column to the same remaining space of container ------ */
+    grid-template-columns: repeat(3, 1fr);
+    /* ------ Set 2nd column to twice the width of 1st and 3rd col ------ */
+    /* grid-template-columns: 1fr 2fr 1fr; */
+    /* ------ You can also mix % values with fr ------ */
+    /* grid-template-columns: 1fr 50% 1fr; */
+
     grid-row-gap: 30px;
     grid-column-gap: 50px;
-    /* grid-gap: 30px; => puts both row and column gap to 30px */
+    /* ------ puts both row and column gap to 30px ------ */
+    /* grid-gap: 30px; */
 }
 
 .item {
