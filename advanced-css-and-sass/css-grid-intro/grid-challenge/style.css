@@ -55,7 +55,7 @@ html {
 /*              METHOD 2: Line Names                       */
 /* ------------------------------------------------------- */
 
-.body {
+/* .body {
     width: 1000px;
     margin: 30px auto;
      display: grid;
@@ -91,4 +91,59 @@ html {
 
 .footer {
     grid-column: col-start 1 / grid-end;
+} */
+
+/* ------------------------------------------------------- */
+/*           METHOD 3: Name Grid Areas                     */
+/* ------------------------------------------------------- */
+/* Grid areas are good for small layouts */
+
+.body {
+    width: 1000px;
+    margin: 30px auto;
+     display: grid;
+     grid-template-rows: 100px 200px 400px 100px;
+     grid-template-columns: repeat(3, 1fr) 200px;
+     grid-gap: 30px;
+
+     grid-template-areas: ". head head ."
+                          "box-1 box-2 box-3 side"
+                          "main main main side"
+                          "foot foot foot foot";
+}
+
+.body > * {
+    background-color: red;
+    padding: 20px;
+    color: white;
+    font-size: 30px;
+    font-family: sans-serif;
+}
+
+.header {
+    grid-area: head;
+}
+
+.sidebar {
+    grid-area: side;
+}
+
+.small-box--1 {
+    grid-area: box-1;
+}
+
+.small-box--2 {
+    grid-area: box-2;
+}
+
+.small-box--3 {
+    grid-area: box-3;
+}
+
+.main {
+    grid-area: main;
+}
+
+.footer {
+    grid-area: foot;
 }
