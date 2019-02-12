@@ -60,12 +60,40 @@
     'res' represents the response that is sent back to whoever made the request  
     'next' is mostly for error handling
 
-
-
-- Add the follwing code into index.js 
+- Add the following code into index.js 
     ```
     const router = require('./router');
 
     router(app);
     ```
+## Connecting to MongoDB
+- To work with MongoDB, we are going to be working with Mongoose, which is called an ORM.  It is a library that is used to interface with the MongoDB database.
+    - To make use of Mongoose we first need to create a user model that represents a user. (Our user will have 2 attributes, an email and a password)
+    - Within server directory, create a new directory called models
+    - Within models directory create file called user.js  
+    (inside this file will be a local definition of exactly what a user is)
+    - Inside user.js:
+        - Import dependencies:  
+            ```
+            const mongoose = require('mongoose');
+            const Schema = mongoose.Schema;
+            ```
+        - Define our model:  
+            ```
+            const userSchema = new Schema({
+                email: { type: String, unique: true, lowercase: true },
+                password: String
+            });
+            ```
+            (note: 'lowercase' converts string to lowercase for uniqueness testing)
+        - Create the model class:  
+            ```
+            const ModelClass = mongoose.model('user', userSchema);
+            ```
+            This basically loads the schema into mongoose  and tells it there is a new schema about a user that corresponds to a collection names 'user'.
+        - Export the model:
+            ```
+            module.exports = ModelClass;
+            ```
+
 
