@@ -30,7 +30,7 @@
     The server line creates an http server that knows how to receive requests and forward anything that comes in to our express app.
 
 ## App Setup
-- Add the follwoing code:
+- Add the following code:
     ```
     app.use(morgan('combine'));
     app.use(bodyParser.json({ type: '*/*' }));
@@ -95,5 +95,10 @@
             ```
             module.exports = ModelClass;
             ```
+- If mongodb is not currently installed go to mongodb.com to download and follow the instructions for your operating system.
+- Then we need to tell mongoose to connect to the instance of mongodb  
+     - inside index.js add the following code
+     ```
+     const mongoose = require('mongoose');
 
 
