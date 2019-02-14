@@ -101,4 +101,31 @@
      ```
      const mongoose = require('mongoose');
 
+## Encrypting passwords with BCrypt
+- Install bcrypt  
+    ```
+    npm install --save bcrypt-nodejs
+    ```
+- Using bcrypt  
+    - go back to user.js file
+        - Import bcrypt library
+        ```
+        const bcrypt = require('bcrypt-nodejs');
+        ```
+        - Add the following code  
+        ```
+        userSchema.pre('save', function(next) {
+            const user = this;
+            bcrypt.genSalt(10, function(err, salt) {
+                if (err) { return next(err); }
+                bcrypt.hash(user.password, salt, null, function(err, hash) {
+                    if (err) { return next(err); }
+                    user.password = hash;
+                    next();
+                });
+            });
+        });
+        ```
+        When we save a password, we generate a salt.  A salt is a randomly generated string of characters.  By combining a salt and a plain password, we get get a hashed password.  The newly generated password that gets saved to the database contains both the salt and the hashed password.  This is going to be very important for signing in a user.
+
 
