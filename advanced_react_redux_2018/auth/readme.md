@@ -127,5 +127,30 @@
         });
         ```
         When we save a password, we generate a salt.  A salt is a randomly generated string of characters.  By combining a salt and a plain password, we get get a hashed password.  The newly generated password that gets saved to the database contains both the salt and the hashed password.  This is going to be very important for signing in a user.
+## Creating a JSON Web Token
+- npm install --save jwt-simple
+- Next we need to create a secret string  
+    - add new file called config.js in root project directory
+    - add config.js to .gitignore file
+    - import jwt and config into authentication file
+    ```
+    const jwt = require('jwt-simple');
+    const config = require('../config');
+    ```
+- In authentication.js file, make a function that is going to take a users id and encode it with our secret
+```
+function tokenForUser(user) {
+    const timeStamp = new Date().getTime();
+    return jwt.encode({sub: user.id, iat: timeStamp}, config.secret);
+};
+```
+jwt is a convention.  As a convention json web tokens have a sub property, which is short for subject. Subject means who is this token about. So, we are saying the subject of this token is the specific user with user.id. iat is another convention of json web tokens that stands for 'issued at time.'
+- Add token to the signup route  
+    ```
+    user.save(function(err) {
+        if (err) { return next(err); }
+        res.json({ token: tokenForUser(user)});
+    });
+    ```
 
 
