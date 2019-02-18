@@ -152,5 +152,18 @@ jwt is a convention.  As a convention json web tokens have a sub property, which
         res.json({ token: tokenForUser(user)});
     });
     ```
-
+## Installing Passport  
+Passport is what's going to help us authenticate a user when they attempt to visit a route that requires authentication.
+- npm install --save passport passport-jwt
+- Make a new folder to hold all of our passport configuration  
+    - make a new folder called services (within the server folder)
+    - inside the services folder create file called passport.js
+    - inside passport.js import the following:  
+    ```
+    const passport = require('passport');
+    const User = require('../models/user');
+    const config = require('../config');
+    const JwtStrategy = require('passport-jwt').Strategy;
+    const ExtractJwt = require('passport-jwt').ExtractJwt;
+    ```
 
