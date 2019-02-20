@@ -167,3 +167,12 @@ Passport is what's going to help us authenticate a user when they attempt to vis
     const ExtractJwt = require('passport-jwt').ExtractJwt;
     ```
 
+## Client Side Auth  
+In this section we will set up basic react application to use with our authentication
+- cd back to auth folder
+- create-react-app client
+- cd into client directory
+- Install the following libraries
+```
+npm install --save react-router-dom redux react-redux redux-form axios  redux-thunk
+```
